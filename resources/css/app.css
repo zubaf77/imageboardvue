@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+@layer base {
+    body {
+        @apply bg-white text-gray-900 transition-colors duration-300 ease-in-out;
+    }
+    p {
+        @apply text-gray-900 transition-colors duration-300 ease-in-out;
+    }
+    html.dark body {
+        @apply bg-gray-900 text-white transition-colors duration-300 ease-in-out;
+    }
+    html.dark p {
+        @apply text-white transition-colors duration-300 ease-in-out;
+    }
+}
+
+@layer components {
+    header, footer {
+        @apply bg-gray-100 text-gray-900 transition-colors duration-300 ease-in-out;
+    }
+    html.dark header, html.dark footer {
+        @apply bg-gray-800 text-white;
+    }
+    nav a {
+        @apply text-gray-700 hover:underline transition-colors;
+    }
+    html.dark nav a {
+        @apply text-gray-300;
+    }
+
+    .theme-toggle {
+        @apply px-3 py-1 border rounded text-sm bg-white text-gray-800 dark:bg-gray-700 dark:text-white transition-colors duration-300 ease-in-out;
+    }
+
+    .board-card {
+        @apply block border border-gray-200 dark:border-gray-700 rounded-lg shadow hover:shadow-lg transition-colors p-6 bg-white dark:bg-gray-800;
+    }
+
+    .board-title {
+        @apply text-xl font-semibold text-gray-800 dark:text-white;
+    }
+
+    .board-description {
+        @apply text-lg font-normal leading-relaxed mt-2 transition-colors duration-300;
+    }
+
+    .sort-button {
+        @apply px-4 py-1.5 rounded border font-medium text-sm text-gray-800 bg-gray-100 hover:bg-gray-200 transition-colors dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600;
+    }
+
+    .sort-button--active {
+        @apply bg-blue-600 text-white dark:bg-blue-500;
+    }
+}
