@@ -67,12 +67,7 @@ class PostController extends Controller
             $service->save();
         }
 
-        return Inertia::render('Post', [
-            'thread' => $post->thread,
-            'board' => $post->board,
-            'posts' => $post->thread->posts()->with(['user'])->latest()->paginate(15),
-            'user' => $post->thread->user,
-        ]);
+        return redirect()->route('posts.index', $post->thread->id);
     }
 
 
